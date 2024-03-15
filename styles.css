@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url('/images/textura-piedra.jpg');
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+#consulta_manual {
+    margin: 20px auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 400px;
+}
+
+#consulta_manual h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#consulta_manual .parrafo {
+    margin-bottom: 0.5rem;
+}
+
+#consulta_manual input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#consulta_manual .boton {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#consulta_manual .boton:hover {
+    background-color: #45a049;
+}
+
+.menu_views {
+    display: flex;
+    justify-content: center;
+}
+
+.menu_views p {
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.parrafo {
+    padding-top: 10px;
+    font-size: large;
+}
+
+.boton {
+    font-size: large;
+    padding: 2px;
+}
+
+input, select {
+    font-size: large;
+}
+
+/*Son para el control de las vistas*/
+[data-content] {
+    display: none;
+}
+
+.active[data-content] {
+    display: block;
+}
+
+.form {
+    margin: 30px auto;
+    width: 300px;
+}
+
+.input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.boton {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #45a049;
+}

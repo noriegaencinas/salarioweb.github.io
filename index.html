@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papita</title>
+    <!-- Incluye el archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="menu">
+        <img src="images/logo.png" alt="nombre de la empresa">
+    </div>
+    <div class="menu_views">
+        <p data-target="#consulta_automatica">Consulta automática</p>
+        <p data-target="#consulta_manual">Consulta manual</p>
+        <p data-target="#resultado">Resultado</p>
+        <p data-target="#crearCuenta">Crear Cuenta</p>
+    </div>
+    <div class="content">
+        <div data-content id="consulta_automatica" class="active">
+            <h2>Consulta automatica</h2>
+            <br>
+
+            <p class="parrafo">Usuario</p>
+            <input type="text" name="user" id="user">
+
+            <p class="parrafo">Contraseña</p>
+            <input type="text" name="password" id="password">
+
+            <br><br>
+            <button class="boton" onclick="clickBuscar()">Buscar</button>
+        </div>
+        <div data-content id="consulta_manual">
+            <h2>Calcular Salario</h2>
+            <br>
+
+            <p class="parrafo">Ingresa tu salario por hora bruto</p>
+            <input type="number" name="baseSalary" id="baseSalary">
+
+            <p class="parrafo">Ingresa tus horas trabajadas</p>
+            <input type="number" name="hoursWorked" id="hoursWorked">
+
+            <p class="parrafo">Ingresa tus horas extras</p>
+            <input type="number" name="extraHours" id="extraHours">
+
+            <br><br>
+            <button class="boton" onclick="calculateSalary()">Calcular</button>
+
+            <p class="parrafo" id="salaryResult"></p>
+            <p class="parrafo" id="impuestos"></p>
+            <p class="parrafo" id="salarioDiario"></p>
+            <p class="parrafo" id="salarioSemanal"></p>
+            <p class="parrafo" id="salarioQuincenal"></p>
+            <p class="parrafo" id="salarioMensual"></p>
+        </div>
+        <div data-content id="resultado">
+            <h2>Resultado</h2>
+            <br>
+
+            <p class="parrafo" id="texto_resultado">Aqui estará el resultado cuando se hayan llenado la solucitud en
+                consulta automática o manual</p>
+        </div>
+        <div data-content id="crearCuenta">
+            <h2>Crear cuenta</h2>
+            <br>
+        
+            <p class="parrafo">Nombre</p>
+            <input type="text" name="name" id="name">
+        
+            <p class="parrafo">Apellido</p>
+            <input type="text" name="lastName" id="lastName">
+        
+            <p class="parrafo">Correo</p>
+            <input type="text" name="email" id="email">
+        
+            <p class="parrafo">Contraseña</p>
+            <input type="text" name="password" id="password">
+        
+            <p class="parrafo">Horas trabajadas por día</p>
+            <input type="number" name="dailyHours" id="dailyHours" min="0" step="1">
+        
+            <p class="parrafo">Días trabajados al mes</p>
+            <input type="number" name="daysWorked" id="daysWorked" min="0" step="1">
+        
+            <p class="parrafo">Salario por hora</p>
+            <input type="number" name="hourlyWage" id="hourlyWage" min="0">
+        
+            <br><br>
+            <button class="boton" onclick="createAccount()">Crear cuenta</button>
+        </div>
+        
+    </div>
+
+    <!-- Scripts al final del cuerpo -->
+    <!-- Permite que la página se cargue y renderice primero -->
+    <script src="script.js"></script>
+</body>
+
+</html>
