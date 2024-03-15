@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url('/images/textura-piedra.jpg');
+    background-image: url('src/img/textura-piedra.jpg');
 }
 
 .menu {
