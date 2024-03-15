@@ -66,29 +66,39 @@ window.onload = function () {
 };
 
 function calculateSalary() {
+    var salarioBaseInput = document.getElementById('baseSalary');
+    var horasTrabajadasInput = document.getElementById('hoursWorked');
+    var horasExtrasInput = document.getElementById('extraHours');
+
+    // Verificar si los campos de entrada están vacíos
+    if (!salarioBaseInput.value || !horasTrabajadasInput.value || !horasExtrasInput.value) {
+        alert(salarioBaseInput.validationMessage || horasTrabajadasInput.validationMessage || horasExtrasInput.validationMessage );
+        return;
+    }
+
     validarNumero('baseSalary');
     validarNumero('hoursWorked');
     validarNumero('extraHours');
 
-    var salarioBase = parseFloat(document.getElementById('baseSalary').value);
-    var horasTrabajadas = parseFloat(document.getElementById('hoursWorked').value);
-    var horasExtras = parseFloat(document.getElementById('extraHours').value);
+    var salarioBase = parseFloat(salarioBaseInput.value);
+    var horasTrabajadas = parseFloat(horasTrabajadasInput.value);
+    var horasExtras = parseFloat(horasExtrasInput.value);
 
     // Las horas extras se pagan al doble
     var salarioHoraExtra = salarioBase * 2;
     var salarioTotal = (horasTrabajadas * salarioBase) + (horasExtras * salarioHoraExtra);
 
     var impuestos = calcularImpuestos(salarioTotal);
-    var salarioDiario = salarioTotal - impuestos;
-    var salarioSemanal = salarioDiario * 7;
-    var salarioQuincenal = salarioDiario * 15;
-    var salarioMensual = salarioDiario * 30;
+    var salarioNeto = salarioTotal - impuestos;
 
+    // Calcular el porcentaje de impuestos
+    var porcentajeImpuestos = (impuestos / salarioTotal) * 100;
+
+    // Mostrar los resultados
+    document.getElementById('salarioBruto').textContent = "El salario sin impuestos: " + salarioTotal.toFixed(2);
     document.getElementById('impuestos').textContent = "El impuesto total diario: " + impuestos.toFixed(2);
-    document.getElementById('salarioDiario').textContent = "El salario diario es: " + salarioDiario.toFixed(2);
-    document.getElementById('salarioSemanal').textContent = "El salario semanal es: " + salarioSemanal.toFixed(2);
-    document.getElementById('salarioQuincenal').textContent = "El salario quincenal es: " + salarioQuincenal.toFixed(2);
-    document.getElementById('salarioMensual').textContent = "El salario mensual es: " + salarioMensual.toFixed(2);
+    document.getElementById('porcentajeImpuestos').textContent = "El porcentaje de impuestos es: " + porcentajeImpuestos.toFixed(2) + "%";
+    document.getElementById('salarioNeto').textContent = "El salario es: " + salarioNeto.toFixed(2);
 }
 
 function calcularImpuestos(totalIngreso) {

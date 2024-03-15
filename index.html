@@ -14,26 +14,13 @@
         <img src="images/logo.png" alt="nombre de la empresa">
     </div>
     <div class="menu_views">
-        <p data-target="#consulta_automatica">Consulta automática</p>
         <p data-target="#consulta_manual">Consulta manual</p>
+        <p data-target="#consulta_automatica">Consulta automática</p>
         <p data-target="#resultado">Resultado</p>
         <p data-target="#crearCuenta">Crear Cuenta</p>
     </div>
     <div class="content">
-        <div data-content id="consulta_automatica" class="active">
-            <h2>Consulta automatica</h2>
-            <br>
-
-            <p class="parrafo">Usuario</p>
-            <input type="text" name="user" id="user">
-
-            <p class="parrafo">Contraseña</p>
-            <input type="text" name="password" id="password">
-
-            <br><br>
-            <button class="boton" onclick="clickBuscar()">Buscar</button>
-        </div>
-        <div data-content id="consulta_manual">
+        <div data-content id="consulta_manual" class="active">
             <h2>Calcular Salario</h2>
             <br>
 
@@ -49,12 +36,24 @@
             <br><br>
             <button class="boton" onclick="calculateSalary()">Calcular</button>
 
-            <p class="parrafo" id="salaryResult"></p>
+            <p class="parrafo" id="salarioBruto"></p>
+            <p class="parrafo" id="porcentajeImpuestos"></p>
             <p class="parrafo" id="impuestos"></p>
-            <p class="parrafo" id="salarioDiario"></p>
-            <p class="parrafo" id="salarioSemanal"></p>
-            <p class="parrafo" id="salarioQuincenal"></p>
-            <p class="parrafo" id="salarioMensual"></p>
+            <p class="parrafo" id="salarioNeto"></p>
+
+        </div>
+        <div data-content id="consulta_automatica">
+            <h2>Consulta automatica</h2>
+            <br>
+
+            <p class="parrafo">Usuario</p>
+            <input type="text" name="user" id="user">
+
+            <p class="parrafo">Contraseña</p>
+            <input type="text" name="password" id="password">
+
+            <br><br>
+            <button class="boton" onclick="clickBuscar()">Buscar</button>
         </div>
         <div data-content id="resultado">
             <h2>Resultado</h2>
